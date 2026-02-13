@@ -1,0 +1,22 @@
+{
+    "folders": {
+        "makax": {
+            "path": "deporte\\futbol-sala\\makax",
+            "event": "Makax",
+            "category": "deportiva",
+            "sport": "Fútbol Sala",
+            "json_file": "json/makax.json",
+            "photo_count": 19
+        },
+        "tamborrada-2026": {
+            "path": "festivos\\tamborrada-2026",
+            "event": "Tamborrada",
+            "category": "general",
+            "sport": null,
+            "json_file": "json/tamborrada-2026.json",
+            "photo_count": 29
+        }
+    },
+    "total_folders": 2,
+    "generated_at": "C:\\Users\\Ibonl\\Desktop\\portfolio-minimalista"
+}
