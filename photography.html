@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografía | Ibon Latorre</title>
+    <meta name="description" content="Portfolio de fotografía profesional de Ibon Latorre.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="logo-il.svg">
+</head>
+
+<body class="photography-page">
+
+    <nav class="main-nav">
+        <a href="index.html" class="nav-brand">Ibon Latorre</a>
+        <div class="nav-links">
+            <a href="index.html#diseno" class="nav-link">Diseño</a>
+            <a href="photography.html" class="nav-link active">Fotografía</a>
+        </div>
+    </nav>
+
+    <header class="photo-hero">
+        <h1 class="massive-title">FOTOGRAFÍA</h1>
+    </header>
+
+    <main class="gallery-section">
+
+        <!-- Sub-navigation: Category -->
+        <nav class="gallery-nav">
+            <a href="#" class="gallery-nav-link active" data-category="all">Todas</a>
+            <span class="gallery-nav-divider">/</span>
+            <a href="#" class="gallery-nav-link" data-category="general">General</a>
+            <span class="gallery-nav-divider">/</span>
+            <a href="#" class="gallery-nav-link" data-category="deportiva">Deportiva</a>
+        </nav>
+
+        <!-- Filters Row -->
+        <div class="filters-row">
+            <div class="search-group">
+                <input type="text" id="gallery-search" placeholder="Ejem: San Fermín, Tamborrada..."
+                    aria-label="Buscar fotos">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                </svg>
+            </div>
+            <div class="filter-group" id="sport-filter-group" style="display:none;">
+                <select id="sport-filter">
+                    <option value="all">Todos los deportes</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <select id="year-filter">
+                    <option value="all">Año</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <select id="month-filter">
+                    <option value="all">Mes</option>
+                </select>
+            </div>
+            <span class="results-count" id="results-count"></span>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="photo-grid" id="photo-grid"></div>
+
+        <!-- Load More -->
+        <div class="load-more-container" id="load-more-container" style="display:none;">
+            <button class="load-more-btn" id="load-more-btn">Cargar más</button>
+        </div>
+
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lb-close" aria-label="Cerrar">&times;</button>
+        <button class="lb-arrow lb-prev" id="lb-prev" aria-label="Anterior">&#8592;</button>
+        <div class="lb-content">
+            <img src="" alt="" class="lb-img" id="lb-img">
+            <div class="lb-info">
+                <span class="lb-meta" id="lb-meta"></span>
+            </div>
+        </div>
+        <button class="lb-arrow lb-next" id="lb-next" aria-label="Siguiente">&#8594;</button>
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+
+</html>
