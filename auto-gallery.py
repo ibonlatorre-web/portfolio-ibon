@@ -170,7 +170,7 @@ def scan_and_process_by_folder(base_path='links'):
     
     folders_data = {}
     all_photos = []
-    extensions = ['.jpg', '.jpeg', '.JPG', '.JPEG']
+    extensions = ['.jpg', '.jpeg', '.JPG', '.JPEG', '.png']
     
     print_color("🔍 Escaneando carpetas en links/...", Colors.YELLOW)
     print()

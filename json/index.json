@@ -8,6 +8,14 @@
             "json_file": "json/makax.json",
             "photo_count": 19
         },
+        "carnaval": {
+            "path": "festivos\\carnaval",
+            "event": "Carnaval",
+            "category": "general",
+            "sport": null,
+            "json_file": "json/carnaval.json",
+            "photo_count": 2
+        },
         "tamborrada-2026": {
             "path": "festivos\\tamborrada-2026",
             "event": "Tamborrada",
@@ -17,6 +25,6 @@
             "photo_count": 29
         }
     },
-    "total_folders": 2,
-    "generated_at": "C:\\Users\\Ibonl\\Desktop\\portfolio-minimalista"
+    "total_folders": 3,
+    "generated_at": "C:\\Users\\joseb\\Desktop\\Codigo\\Ibon\\portfolio-ibon"
 }

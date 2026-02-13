@@ -44,18 +44,38 @@ const lbNext = document.getElementById('lb-next');
 // ─── LOAD DATA ────────────────────────────────────────────────
 async function loadPhotosData() {
     try {
-        const response = await fetch('photos-data.json');
-        if (!response.ok) {
-            throw new Error('No se pudo cargar photos-data.json');
+        // Primero cargamos el index.json para saber qué archivos JSON existen
+        const indexResponse = await fetch('json/index.json');
+        if (!indexResponse.ok) {
+            throw new Error('No se pudo cargar json/index.json');
         }
-        const data = await response.json();
-        state.all = data;
-        state.filtered = data;
+        const indexData = await indexResponse.json();
+        
+        // Ahora cargamos cada archivo JSON de cada carpeta
+        const allPhotos = [];
+        const jsonFiles = Object.values(indexData.folders).map(folder => folder.json_file);
+        
+        for (const jsonFile of jsonFiles) {
+            try {
+                const response = await fetch(jsonFile);
+                if (response.ok) {
+                    const photos = await response.json();
+                    allPhotos.push(...photos);
+                } else {
+                    console.warn(`No se pudo cargar ${jsonFile}`);
+                }
+            } catch (err) {
+                console.warn(`Error cargando ${jsonFile}:`, err);
+            }
+        }
+        
+        state.all = allPhotos;
+        state.filtered = allPhotos;
         state.loaded = true;
-        return data;
+        return allPhotos;
     } catch (error) {
         console.error('Error cargando fotos:', error);
-        photoGrid.innerHTML = '<div class="no-results">Error al cargar las fotos. Verifica que photos-data.json exista.</div>';
+        photoGrid.innerHTML = '<div class="no-results">Error al cargar las fotos. Verifica que json/index.json exista.</div>';
         return [];
     }
 }
